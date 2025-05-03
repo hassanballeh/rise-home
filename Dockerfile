@@ -8,7 +8,16 @@
     COPY package.json pnpm-lock.yaml ./
     RUN pnpm install
     
-    COPY . .
+    COPY public ./public
+    COPY components ./components
+    COPY hooks ./hooks
+    COPY lib ./lib
+    COPY pages ./pages
+    COPY next.config.ts ./next.config.ts
+    COPY tsconfig.json ./tsconfig.json
+    COPY next-env.d.ts ./next-env.d.ts
+    COPY components.json ./components.json
+
     RUN pnpm build
     
     
