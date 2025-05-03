@@ -1,0 +1,17 @@
+version: "3.8"  
+
+services:  
+  nextjs:  
+    build: .  
+    container_name: rise-tek-home  
+    restart: unless-stopped  
+    environment:  
+      - NODE_ENV=production  
+    ports:  
+      - 3002:3000  
+    networks:  
+      - web  
+
+networks:  
+  web:  
+    external: true
